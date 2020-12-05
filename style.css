@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+
+
+  background: linear-gradient(90deg, #677f95, #005CAA, #677f95);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s none 3;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+ul:hover {
+  animation: none;
+
+}
+
+ul li {
+  list-style: none;
+  margin: 0 20px;
+  transition: 0.5s;
+}
+
+
+ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  padding: 5px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+ul:hover li a {
+  transform: scale(1.5);
+  opacity: 0.05;
+  filter: blur(5px);
+
+}
+
+ul li a:hover {
+  transform: scale(2);
+  opacity: 1;
+  filter: blur(0);
+  z-index: 3;
+  -webkit-text-fill-color: #fff;
+}
+
+ul li a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #005CAA;
+  transition: 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -3;
+}
+
+ul li a:hover:before {
+  transition: transform 0.5s;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+
+  100% {
+    background-position: 500%;
+  }
+}
